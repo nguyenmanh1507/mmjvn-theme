@@ -1,0 +1,724 @@
+/*
+Theme Name: mmjvn-theme
+Theme URI: http://mmj.vn/
+Author: mmjvn
+Author URI: http://mmj.vn
+Description: WordPress theme for mmj.vn website
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mmjvn-theme
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+mmjvn-theme is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+    ## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/* line 7, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+body {
+  margin: 0; }
+
+/* line 22, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block; }
+
+/* line 29, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+/* line 34, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/* line 40, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+[hidden], template {
+  display: none; }
+
+/* line 44, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+a {
+  background-color: transparent; }
+
+/* line 49, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+a:active, a:hover {
+  outline: 0; }
+
+/* line 53, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/* line 58, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+b, strong {
+  font-weight: bold; }
+
+/* line 62, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+dfn {
+  font-style: italic; }
+
+/* line 66, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* line 71, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/* line 76, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+small {
+  font-size: 80%; }
+
+/* line 81, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 88, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+sup {
+  top: -0.5em; }
+
+/* line 92, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+sub {
+  bottom: -0.25em; }
+
+/* line 96, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+img {
+  border: 0; }
+
+/* line 100, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* line 104, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+figure {
+  margin: 1em 40px; }
+
+/* line 108, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/* line 113, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+pre {
+  overflow: auto; }
+
+/* line 120, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* line 129, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+/* line 135, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+button {
+  overflow: visible; }
+
+/* line 140, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+button, select {
+  text-transform: none; }
+
+/* line 147, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+/* line 153, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/* line 158, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/* line 163, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+input {
+  line-height: normal; }
+
+/* line 168, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+/* line 174, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/* line 178, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box; }
+
+/* line 184, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/* line 188, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/* line 194, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+legend {
+  border: 0;
+  padding: 0; }
+
+/* line 199, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+textarea {
+  overflow: auto; }
+
+/* line 203, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+optgroup {
+  font-weight: bold; }
+
+/* line 207, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 213, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/normalize */
+td, th {
+  padding: 0; }
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+/* line 5, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/typography/typography */
+body, button, input, select, textarea {
+  color: #9aa7af;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5; }
+
+/* line 12, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/typography/typography */
+a {
+  text-decoration: none; }
+
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/typography/headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #2f383d;
+  clear: both; }
+
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/typography/copy */
+p {
+  margin-bottom: 1.5em; }
+
+/* line 5, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/typography/copy */
+dfn, cite, em, i {
+  font-style: italic; }
+
+/* line 9, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/typography/copy */
+blockquote {
+  margin: 0 1.5em; }
+
+/* line 13, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/typography/copy */
+address {
+  margin: 0 0 1.5em; }
+
+/* line 17, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/typography/copy */
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em; }
+
+/* line 28, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/typography/copy */
+code, kbd, tt, var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  font-size: 0.9375rem; }
+
+/* line 33, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/typography/copy */
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help; }
+
+/* line 38, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/typography/copy */
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none; }
+
+/* line 43, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/typography/copy */
+big {
+  font-size: 125%; }
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/elements */
+html {
+  box-sizing: border-box; }
+
+/* line 7, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/elements */
+*, *:before, *:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit; }
+
+/* line 11, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/elements */
+body {
+  background: #fff
+  /* Fallback for when there is no custom background color defined. */ }
+
+/* line 15, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/elements */
+blockquote, q {
+  quotes: "" ""; }
+  /* line 19, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/elements */
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: ""; }
+
+/* line 24, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/elements */
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em; }
+
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/lists */
+ul, ol {
+  margin: 0 0 1.5em 3em; }
+
+/* line 5, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/lists */
+ul {
+  list-style: disc; }
+
+/* line 9, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/lists */
+ol {
+  list-style: decimal; }
+
+/* line 14, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/lists */
+li > ul, li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em; }
+
+/* line 19, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/lists */
+dt {
+  font-weight: bold; }
+
+/* line 23, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/lists */
+dd {
+  margin: 0 1.5em 1.5em; }
+
+/* line 33, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/elements */
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%
+  /* Adhere to container width. */ }
+
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/elements/tables */
+table {
+  margin: 0 0 1.5em;
+  width: 100%; }
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+/* line 4, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/forms/buttons */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  border: 1px solid;
+  border-color: #ccc #ccc #bbb;
+  border-radius: 3px;
+  background: #24b3cb;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0.6em 1em 0.4em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
+  /* line 16, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/forms/buttons */
+  button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
+    border-color: #ccc #bbb #aaa;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
+  /* line 22, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/forms/buttons */
+  button:active, button:focus, input[type="button"]:active, input[type="button"]:focus, input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:active, input[type="submit"]:focus {
+    border-color: #aaa #bbb #bbb;
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
+
+/* line 6, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/forms/fields */
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea {
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px; }
+  /* line 11, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/forms/fields */
+  input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, textarea:focus {
+    color: #111; }
+
+/* line 20, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/forms/fields */
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"] {
+  padding: 3px; }
+
+/* line 24, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/forms/fields */
+textarea {
+  padding-left: 3px;
+  width: 100%; }
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/links */
+a {
+  color: #24b3cb; }
+  /* line 4, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/links */
+  a:visited {
+    color: purple; }
+  /* line 9, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/links */
+  a:hover, a:focus, a:active {
+    color: #137b8d; }
+  /* line 12, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/links */
+  a:focus {
+    outline: thin dotted; }
+  /* line 16, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/links */
+  a:hover, a:active {
+    outline: 0; }
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+.main-navigation {
+  clear: both;
+  display: block;
+  float: left;
+  width: 100%; }
+  /* line 7, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+  .main-navigation ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0; }
+    /* line 13, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+    .main-navigation ul ul {
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 1.5em;
+      left: -999em;
+      z-index: 99999; }
+      /* line 21, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+      .main-navigation ul ul ul {
+        left: -999em;
+        top: 0; }
+      /* line 28, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+      .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+        left: 100%; }
+      /* line 33, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+      .main-navigation ul ul a {
+        width: 200px; }
+    /* line 47, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+    .main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul {
+      left: auto; }
+  /* line 51, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+  .main-navigation li {
+    float: left;
+    position: relative; }
+  /* line 59, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+  .main-navigation a {
+    display: block;
+    text-decoration: none; }
+
+/* Small menu. */
+/* line 72, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+.menu-toggle, .main-navigation.toggled ul {
+  display: block; }
+
+@media screen and (min-width: 37.5em) {
+  /* line 77, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+  .menu-toggle {
+    display: none; }
+
+  /* line 80, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+  .main-navigation ul {
+    display: block; }
+ }
+
+/* line 89, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+.site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden; }
+/* line 94, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
+  float: left;
+  width: 50%; }
+/* line 99, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/navigation/menus */
+.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%; }
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+/* line 2, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/modules/accessibility */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+  /* line 11, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/modules/accessibility */
+  .screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000
+    /* Above WP toolbar. */ }
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/modules/alignments */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em; }
+
+/* line 7, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/modules/alignments */
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em; }
+
+/* line 13, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/modules/alignments */
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+/* line 12, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/modules/clearings */
+.clear:before, .clear:after, .entry-content:before, .entry-content:after, .comment-content:before, .comment-content:after, .site-header:before, .site-header:after, .site-content:before, .site-content:after, .site-footer:before, .site-footer:after {
+  content: "";
+  display: table; }
+
+/* line 21, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/modules/clearings */
+.clear:after, .entry-content:after, .comment-content:after, .site-header:after, .site-content:after, .site-footer:after {
+  clear: both; }
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/site/secondary/widgets */
+.widget {
+  margin: 0 0 1.5em
+  /* Make sure select elements fit in widgets. */ }
+  /* line 5, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/site/secondary/widgets */
+  .widget select {
+    max-width: 100%; }
+
+/* Search widget. */
+/* line 11, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/site/secondary/widgets */
+.widget_search .search-submit {
+  display: none; }
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/site/primary/posts-and-pages */
+.sticky {
+  display: block; }
+
+/* line 5, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/site/primary/posts-and-pages */
+.hentry {
+  margin: 0 0 1.5em; }
+
+/* line 10, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/site/primary/posts-and-pages */
+.byline, .updated:not(.published) {
+  display: none; }
+
+/* line 15, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/site/primary/posts-and-pages */
+.single .byline, .group-blog .byline {
+  display: inline; }
+
+/* line 21, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/site/primary/posts-and-pages */
+.page-content, .entry-content, .entry-summary {
+  margin: 1.5em 0 0; }
+
+/* line 25, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/site/primary/posts-and-pages */
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em; }
+
+/*--------------------------------------------------------------
+## Asides
+--------------------------------------------------------------*/
+/* line 2, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/site/primary/asides */
+.blog .format-aside .entry-title, .archive .format-aside .entry-title {
+  display: none; }
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/site/primary/comments */
+.comment-content a {
+  word-wrap: break-word; }
+
+/* line 4, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/site/primary/comments */
+.bypostauthor {
+  display: block; }
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+/* line 3, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/modules/infinite-scroll */
+.infinite-scroll .posts-navigation, .infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none; }
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+/* line 8, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/modules/infinite-scroll */
+.infinity-end.neverending .site-footer {
+  display: block; }
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+/* line 3, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/media */
+.page-content .wp-smiley, .entry-content .wp-smiley, .comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0; }
+
+/* Make sure embeds and iframes fit their containers. */
+/* line 13, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/media */
+embed, iframe, object {
+  max-width: 100%; }
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/captions */
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%; }
+  /* line 5, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/captions */
+  .wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  /* line 9, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/captions */
+  .wp-caption .wp-caption-text {
+    margin: 0.8075em 0; }
+
+/* line 14, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/captions */
+.wp-caption-text {
+  text-align: center; }
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+/* line 1, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/galleries */
+.gallery {
+  margin-bottom: 1.5em; }
+
+/* line 5, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/galleries */
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%; }
+  /* line 11, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/galleries */
+  .gallery-columns-2 .gallery-item {
+    max-width: 50%; }
+  /* line 15, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/galleries */
+  .gallery-columns-3 .gallery-item {
+    max-width: 33.33%; }
+  /* line 19, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/galleries */
+  .gallery-columns-4 .gallery-item {
+    max-width: 25%; }
+  /* line 23, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/galleries */
+  .gallery-columns-5 .gallery-item {
+    max-width: 20%; }
+  /* line 27, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/galleries */
+  .gallery-columns-6 .gallery-item {
+    max-width: 16.66%; }
+  /* line 31, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/galleries */
+  .gallery-columns-7 .gallery-item {
+    max-width: 14.28%; }
+  /* line 35, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/galleries */
+  .gallery-columns-8 .gallery-item {
+    max-width: 12.5%; }
+  /* line 39, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/galleries */
+  .gallery-columns-9 .gallery-item {
+    max-width: 11.11%; }
+
+/* line 44, E:/Web_Dev/Xampp/htdocs/mmj.vn/wp-content/themes/mmjvn-theme/sass/media/galleries */
+.gallery-caption {
+  display: block; }
+/*# sourceMappingURL=style.css.map */
