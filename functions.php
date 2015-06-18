@@ -123,7 +123,13 @@ function mmjvn_theme_scripts() {
 
 	wp_enqueue_script ( 'zf-js', get_template_directory_uri() . '/js/vendor/foundation.min.js', array( 'jquery' ), '', true );
 
-	wp_enqueue_script ( 'app-js', get_template_directory_uri() . '/js/app.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script ( 'app-js', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), '', true );
+
+	wp_register_script ( 'google-map-js', get_template_directory_uri() . '/js/google-map.js', array(), '', true );
+
+	if ( is_page( 'lien-he' ) ) {
+		wp_enqueue_script( 'google-map-js' );
+	}
 
 	// wp_enqueue_script( 'mmjvn-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
