@@ -1,0 +1,171 @@
+#slideshow {
+	max-width: 1920px;
+	margin: 0 auto;
+}
+
+.flexslider {
+	border: none;
+	margin-bottom: 1px;
+}
+
+// Slider
+#slider {
+	overflow: hidden;
+
+	@media only screen and (max-width: 61.25rem) {
+		.flex-viewport {
+			padding-bottom: 40px;
+		}
+	}
+
+	&:hover .slider-item .slider-item__info {
+		transform: translateY(0);
+	}
+
+	.flex-prev, .flex-next {
+		background-color: $black;
+		background-color: rgba($black, .6);
+		color: $white;
+		height: 60px;
+		width: 60px;
+		line-height: 60px;
+		text-align: center;
+		opacity: 1;
+
+		&:hover {
+			background-color: $primary-color;
+			background-color: rgba(#24b3cb, .6);
+		}
+	}
+
+	.flex-prev {
+		left: 0;
+	}
+
+	.flex-next {
+		right: 0;
+	}
+
+	.flex-direction-nav a:before {
+		font-family: 'FontAwesome';
+		content: '\f104';
+		color: $white;
+	}
+
+	.flex-direction-nav a.flex-next:before {
+		content: '\f105';
+	}
+
+	.flex-control-paging li a.flex-active {
+		background-color: $primary-color;
+	}
+
+	.flex-control-nav {
+		@media only screen and (min-width: 61.3125rem) {
+			display: none;
+		}
+
+		bottom: -8px;
+	}
+
+	.slider-item {
+		position: relative;
+		
+		.slider-item__info {
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+			color: $white;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			padding: 2% 18%;
+			text-align: right;
+			transform: translateY(63%);
+			transition: transform .3s ease-in;
+
+			h3 {
+				font-size: 2.25rem;
+				font-weight: 700;
+				color: $white;
+				text-transform: uppercase;
+			}
+
+			p {
+				display: inline-block;
+				width: 60%;
+			}
+
+			a {
+				display: inline-block;
+				border: 1px solid $white;
+				color: $white;
+				padding: 5px 25px;
+				font-weight: 700;
+				text-transform: uppercase;
+				
+				@extend %button-border-hover;
+			}
+
+			@media only screen and (max-width: 61.25rem) {
+				h3 {
+					font-size: 1.25rem;
+				}
+
+				a {
+					font-size: 0.8125rem;
+				}
+			}
+
+			@media only screen and (max-width: 80rem) {
+				transform: translateY(0);
+
+				p {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+// Carousel
+#carousel {
+
+	@media only screen and (max-width: 61.25rem) {
+		display: none;
+	}
+
+	.slides {
+
+		@media only screen and (min-width: 85.3125rem) {
+			text-align: center;
+			width: 100% !important;	
+		}
+
+		li {
+			display: inline-block !important;
+			float: none !important;
+			transition: transform .3s ease-in;
+
+			&.flex-active-slide {
+				border-bottom: 5px solid $primary-color;
+				box-shadow: 1px 2px 4px rgba($black, .4);
+				position: relative;
+				z-index: 10;
+
+				img {
+					filter: none;
+				}
+			}
+
+			img {
+				cursor: pointer;
+				filter: grayscale(1);
+				transition: all .3s ease-in;
+
+				&:hover {
+					filter: none;
+				}
+			}
+		}
+	}
+}

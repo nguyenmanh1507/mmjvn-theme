@@ -43,6 +43,7 @@ function mmjvn_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'mmjvn-theme' ),
+		'footer-menu' => esc_html__( 'Footer Menu', 'mmjvn-theme' )
 	) );
 
 	/*
@@ -114,17 +115,19 @@ add_action( 'widgets_init', 'mmjvn_theme_widgets_init' );
 function mmjvn_theme_scripts() {
 	wp_enqueue_style( 'googlefont', 'http://fonts.googleapis.com/css?family=Lato:300,400,700,900' );
 
-	wp_enqueue_style( 'zf5-css', get_template_directory_uri() . '/css/foundation.min.css' );
-
-	wp_enqueue_style( 'FontAwesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
+	wp_enqueue_style( 'libs-css', get_template_directory_uri() . '/css/libraries.min.css' ); 
 
 	wp_enqueue_style( 'mmjvn-theme-style', get_stylesheet_uri() );
 
-	wp_enqueue_script ( 'zf5-js', get_template_directory_uri() . '/js/foundation.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script ( 'libs-js', get_template_directory_uri() . '/js/vendor/libraries.min.js', array( 'jquery' ), '', true );
 
-	wp_enqueue_script( 'mmjvn-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script ( 'zf-js', get_template_directory_uri() . '/js/vendor/foundation.min.js', array( 'jquery' ), '', true );
 
-	wp_enqueue_script( 'mmjvn-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script ( 'app-js', get_template_directory_uri() . '/js/app.min.js', array( 'jquery' ), '', true );
+
+	// wp_enqueue_script( 'mmjvn-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+
+	// wp_enqueue_script( 'mmjvn-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -156,3 +159,110 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Walker class to enable ZF5 navigation
+ */
+class F5_TOP_BAR_WALKER extends Walker_Nav_Menu
+{ 
+	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) 
+	{
+    $element->has_children = !empty( $children_elements[$element->ID] );
+    
+    if(!empty($element->classes)){
+    	$element->classes[] = ( $element->current || $element->current_item_ancestor ) ? 'active' : '';
+    	$element->classes[] = ( $element->has_children ) ? 'has-dropdown' : '';	        
+    }
+
+    parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+  }
+    
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class=\"sub-menu dropdown\">\n";
+	}
+    
+	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+	{
+		$item_output = '';
+		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+		$output .= ( $depth == 0 ) ? '<li class="divider"></li>' : '';
+		$class_names = $value = '';
+        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        $classes[] = 'menu-item-'. $item->ID;
+        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+        $class_names = ' class="' . esc_attr( $class_names ) . '"';
+		$output.= $indent.'<li id="menu-item-'. $item->ID.'" '.$class_names.'>';
+		
+		if ( empty( $item->title ) && empty( $item->url )) 
+		{
+			$item->url = get_permalink($item->ID);
+			$item->title = $item->post_title;
+			
+			$attributes = $this->attributes($item);
+ 
+            $item_output .= '<a'. $attributes .'>';
+			$item_output .= apply_filters( 'the_title', $item->title, $item->ID );
+			$item_output .= '</a>';
+		}
+		else
+		{
+			$attributes = $this->attributes($item);
+	
+			$item_output = $args->before;
+			$item_output .= '<a'. $attributes .'>';
+			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+			$item_output .= '</a>';
+			$item_output .= $args->after;
+		}
+		
+		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args, $id );
+	}
+	
+	private function attributes($item)
+	{
+		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+		
+		return $attributes;
+	}
+	
+	public static function items_default_wrap($menu_text) {
+		/**
+		 * Set default menu for menus not yet linked to theme location
+		 * Method courtesy of robertomatute - https://github.com/roots/roots/issues/939
+		 */
+		return str_replace('<ul>', '<ul class="right">', $menu_text);
+	}
+      
+	public static function items_remove_defaut_wrapper() 
+	{
+		/**
+		 * Remove default div wrapper around ul element
+		 */
+		?>
+		<script type="text/javascript">
+			jQuery(document).ready(function($){
+				var default_nav = $(".top-bar-section > div > ul");
+				if(default_nav.parent("div").hasClass("right") === true){
+		  		default_nav.unwrap();
+				}
+			});
+		</script>
+		<?php
+	}
+}
+ 
+add_filter('wp_page_menu', array('F5_TOP_BAR_WALKER','items_default_wrap'));
+add_action('wp_head', array('F5_TOP_BAR_WALKER','items_remove_defaut_wrapper'));
+
+/**
+ * Apply Now button shortcode
+ */
+function apply_now_button( $attrs ) {
+	return '<a href="' . $attrs['url'] . '" class="button--apply">' . $attrs['text'] . '</a>';
+}
+
+add_shortcode( 'apply', 'apply_now_button' );

@@ -19,59 +19,100 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mmjvn-theme' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		
-		<div class="top-header">
-			
-			<div class="row">
-				
-				<div class="medium-6 columns">
-					
-					<ul class="socials-list inline-list">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-					</ul>
-					<!-- /.socials-list -->
+  <!-- HEADER
+  ================================================== -->
+  
+  <header id="site-header">
+    
+    <div class="top-header">
+    
+      <div class="row">
+        
+        <div class="medium-6 columns">
+          
+          <ul class="socials-list inline-list">
+            <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+          </ul>
+          <!-- /.socials-list -->
 
-				</div>
+        </div>
 
-				<div class="medium-6 columns">
-					
-					<div class="lang-and-search left">
-						<form action="/" class="search-form">
-							<input type="text" name="s" id="s" class="search-form__field">
-							<button class="search-form__btn"><i class="fa fa-search"></i></button>
-						</form>
-						<ul class="language-list inline-list right">
-							<li><a href="#">English</a></li>
-							<li><a href="#">Vietnamese</a></li>
-						</ul>
-					</div>
-					<!-- /.lang-and-search -->
+        <div class="medium-6 columns">
+          
+          <div class="lang-and-search">
+            <div class="search-form-wrap">
+              <form action="/" class="search-form">
+                <input type="text" name="s" id="s" class="search-form__field" placeholder="Search on MMJVietnam..." required>
+                <button type="submit" class="search-form__btn"><i class="fa fa-search"></i></button>
+                <span class="search-form__icon"><i class="fa fa-search"></i></span>
+              </form>
+            </div>
+            <!-- /.search-form-wrap -->
 
-				</div>
+            <!-- <ul class="language-list inline-list right">
+              <li><a href="#">English</a></li>
+              <li><a href="#">Vietnamese</a></li>
+            </ul> -->
+          </div>
+          <!-- /.lang-and-search -->
 
-			</div>
+        </div>
 
-		</div>
-		<!-- /.top-header -->
+      </div>
 
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div><!-- .site-branding -->
+    </div>
+    <!-- /.top-header -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'mmjvn-theme' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-		
-	</header><!-- #masthead -->
+    <div class="site-navigation">
 
-	<div id="content" class="site-content">
+      <div class="row">
+        <div class="small-12 columns">
+        
+          <nav class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+              <li class="name">
+                <h1>
+                  <span class="show-for-sr">MMJ Viet Nam</span>
+                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                    <img src="<?php echo get_template_directory_uri() . '/images/logo.png' ?>" class="logo-big" alt="Logo MMJ Viet Nam">
+                    <img src="<?php echo get_template_directory_uri() . '/images/logo-small.png' ?>" class="logo-small" alt="Logo MMJ Viet Nam">
+                  </a>
+                </h1>
+              </li>
+               <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+              <li class="toggle-topbar menu-icon"><a href="#"><span><?php esc_html_e( 'Menu', 'mmjvn-theme' ); ?></span></a></li>
+            </ul>
+          
+            <section class="top-bar-section">
+              <h2 class="show-for-sr">Main Navigation</h2>
+              <!-- Right Nav Section -->
+
+              <?php 
+              	$options = array( 
+              		'container' => false,
+						    	'menu_class' => 'right',
+						    	'theme_location' => 'primary',
+						      'walker' => new F5_TOP_BAR_WALKER(),
+              		);
+              	wp_nav_menu( $options );
+              ?>
+          
+            </section>
+          </nav>
+        
+        </div>
+      </div>
+
+    </div>
+    <!-- /.site-navigation -->
+
+  </header>
+  <!-- /#site-header -->
+  
+  <!-- END HEADER
+  ================================================== -->

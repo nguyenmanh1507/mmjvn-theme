@@ -1,0 +1,148 @@
+.apply-form-intro {
+
+	h1, 
+	h2,
+	h3,
+	h4 {
+		color: $steel;
+		font-size: 2.25rem;
+	}
+
+	p {
+		color: $steel;
+		font-size: 1.5rem;
+	}
+
+	span {
+		color: $primary-color;
+	}
+}
+
+.apply-form {
+
+	label {
+		font-size: 1.875rem;
+		// font-weight: 300;
+
+		i.fa {
+			font-size: 16px;
+			color: $primary-color;
+			vertical-align: top;
+		}
+
+		@media only screen and (max-width: 64em) { 
+			font-size: 1.125rem;
+		}
+
+		@media only screen and (max-width: 40em) { 
+			margin-bottom: 0;
+
+			&.right {
+				float: none !important;
+				text-align: left;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 64em) { 
+		input[type="file"] {
+			font-size: 1.125rem;
+		}
+	}
+
+	.apply-form__field {
+		border: 3px solid $jet;
+		box-shadow: none;
+		border-radius: 5px;
+		height: auto;
+		font-size: 1.5rem;
+		transition: all .3s ease-in;
+		margin-bottom: 0;
+
+		@include placeholder {
+			font-style: italic;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&--tall {
+			height: 10.21em;
+		}
+
+		&--short {
+			width: 72px;
+		}
+
+		&:hover,
+		&:focus {
+			border-color: $primary-color;
+		}
+
+		&.wpcf7-not-valid {
+			border-color: tomato;
+		}
+
+		@media only screen and (max-width: 64em) { 
+			font-size: 1.125rem;
+		}
+	}
+
+	span {
+		color: $jet;
+		font-size: 1.5rem;
+		float: left;
+		margin-right: 15px;
+
+		&.wpcf7-form-control-wrap {
+			float: none;
+			margin-right: 0;
+		}
+
+		&.wpcf7-not-valid-tip {
+			width: 100%;
+		  background-color: tomato;
+		  text-align: center;
+		  border-radius: 0 0 5px 5px;
+		  margin-top: -4px;
+		  color: white;
+
+		  @media only screen and (max-width: 64em) { 
+				font-size: 1rem;
+			}
+		}
+
+		&.af-quiz .wpcf7-not-valid-tip {
+			background-color: transparent;
+			color: tomato;
+			text-align: left;
+			margin-top: 0;
+		}
+	}
+
+	[type="submit"] {
+		border-radius: 5px;
+		text-transform: uppercase;
+		font-size: 1.875rem;
+		float: right;
+
+		&:hover {
+			background-color: tomato;
+		}
+
+		@media only screen and (max-width: 64rem) {
+			font-size: 1.125rem;
+		}
+
+		@media only screen and (max-width: 40em) { 
+			float: none;
+			margin-top: 1.67em;
+			width: 100%;
+		}
+	}
+
+	div.wpcf7-validation-errors {
+		@extend %valid-errors;
+	}
+}
