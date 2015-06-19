@@ -1,5 +1,8 @@
 function initialize() {
-	var mmjvnLoc = new google.maps.LatLng(21.031857, 105.782611);
+	var hnOfficeMap = document.querySelector('#branch-map-1');
+	var lat = hnOfficeMap.dataset.lat;
+	var lng = hnOfficeMap.dataset.lng;
+	var mmjvnLoc = new google.maps.LatLng(lat, lng);
 	var mapOptions = {
 		zoom: 17,
 		scrollwheel: false,

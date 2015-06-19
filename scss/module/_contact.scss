@@ -138,7 +138,7 @@
 	}
 
 	.branch-address__detail {
-		font-weight: 300;
+		// font-weight: 300;
 		font-size: 1.125rem;
 
 		span {
@@ -181,4 +181,8 @@
 	background-color: $jet;
 	height: 300px;
 	width: 100%;
+
+	img {
+		height: 100%;
+	}
 }

@@ -7041,7 +7041,6 @@ a:hover {
 }
 
 .branch-address .branch-address__detail {
-  font-weight: 300;
   font-size: 1.125rem;
 }
 
@@ -7087,6 +7086,12 @@ a:hover {
   width: 100%;
 }
 
+#branch-map-1 img,
+#branch-map-2 img,
+#branch-map-3 img {
+  height: 100%;
+}
+
 .apply-form-intro h1,
 .apply-form-intro h2,
 .apply-form-intro h3,
@@ -7114,6 +7119,11 @@ a:hover {
   vertical-align: top;
 }
 
+.apply-form label.inline {
+  padding: 0;
+  margin: 0;
+}
+
 @media only screen and (max-width: 64em) {
   .apply-form label {
     font-size: 1.125rem;
@@ -7139,7 +7149,7 @@ a:hover {
 .apply-form .apply-form__field {
   border: 3px solid #9aa7af;
   box-shadow: none;
-  border-radius: 5px;
+  border-radius: 10px;
   height: auto;
   font-size: 1.5rem;
   -webkit-transition: all 0.3s ease-in;

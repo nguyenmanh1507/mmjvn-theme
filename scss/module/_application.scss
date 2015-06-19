@@ -30,6 +30,11 @@
 			vertical-align: top;
 		}
 
+		&.inline {
+			padding: 0;
+			margin: 0;
+		}
+
 		@media only screen and (max-width: 64em) { 
 			font-size: 1.125rem;
 		}
@@ -53,7 +58,7 @@
 	.apply-form__field {
 		border: 3px solid $jet;
 		box-shadow: none;
-		border-radius: 5px;
+		border-radius: 10px;
 		height: auto;
 		font-size: 1.5rem;
 		transition: all .3s ease-in;
