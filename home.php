@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying blog posts.
+ * The template for displaying categories.
  *
  * This is the template that displays all categories by default.
  * Please note that this is the WordPress construct of categories
@@ -28,14 +28,13 @@ get_header(); ?>
 					
 					<?php while ( have_posts() ) : the_post(); ?>
 					
-					<?php get_template_part( 'template-parts/content', 'custom' ); ?>
+					<?php get_template_part( 'template-parts/content', 'blog' ); ?>
 
         	<?php endwhile; else : ?>
 
         		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
         	<?php endif; ?>
-
 
           <!-- Paginate -->
           <?php get_template_part( 'template-parts/content', 'paginate' ); ?>

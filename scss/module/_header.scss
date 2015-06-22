@@ -264,11 +264,16 @@
 		border: 1px solid $gainsboro;
 	}
 
-	.top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button) {
+	.top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button),
+	.top-bar-section .dropdown li:not(.has-form).active > a:not(.button) {
 		background-color: $white;
 		color: $jet;
 		line-height: 1.5em;
 		padding: 10px 25px;
+	}
+
+	.top-bar-section .dropdown li:not(.has-form).active > a:not(.button) {
+		color: $primary-color;
 	}
 
 	.top-bar-section .right li .dropdown {

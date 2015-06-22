@@ -66,7 +66,8 @@ get_header(); ?>
 
             <?php 
             $args = array(
-            		'category_name' => 'tuyen-dung'
+            		'category_name' => 'tuyen-dung',
+                'posts_per_page' => 8
             	);
 
             $the_query = new WP_Query( $args );

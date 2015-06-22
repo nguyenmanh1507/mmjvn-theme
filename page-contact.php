@@ -41,7 +41,7 @@ get_header(); ?>
                   <p class="branch-address__detail"><span><?php _e( 'Địa chỉ', 'mmjvn-theme' ); ?></span> <?php the_field( 'cu_hn_address' ); ?></p>
                   <p class="branch-address__detail"><span><?php _e( 'Điện thoại', 'mmjvn-theme' ); ?></span> <a href="tel:<?php the_field( 'cu_hn_phone' ); ?>"><?php the_field( 'cu_hn_phone' ) ?></a></p>
                   <p class="branch-address__detail"><span><?php _e( 'Email', 'mmjvn-theme' ); ?></span> <a href="mailto:<?php the_field( 'cu_hn_email' ); ?>"><?php the_field( 'cu_hn_email' ); ?></a></p>
-                  <p class="branch-address__detail"><span><?php _e( 'Social', 'mmjvn-theme' ); ?></span> <a href="#" class="social"><i class="fa fa-facebook"></i></a><a href="#" class="social"><i class="fa fa-google-plus"></i></a><a href="#" class="social"><i class="fa fa-twitter"></i></a><a href="#" class="social"><i class="fa fa-youtube"></i></a></p>
+                  <!-- <p class="branch-address__detail"><span><?php _e( 'Social', 'mmjvn-theme' ); ?></span> <a href="#" class="social"><i class="fa fa-facebook"></i></a><a href="#" class="social"><i class="fa fa-google-plus"></i></a><a href="#" class="social"><i class="fa fa-twitter"></i></a><a href="#" class="social"><i class="fa fa-youtube"></i></a></p> -->
                 </div>
                 <!-- /.branch-address -->
 
@@ -72,7 +72,7 @@ get_header(); ?>
                   <p class="branch-address__detail"><span><?php _e( 'Địa chỉ', 'mmjvn-theme' ); ?></span> <?php the_field( 'cu_kyoto_address' ) ?></p>
                   <p class="branch-address__detail"><span><?php _e( 'Điện thoại', 'mmjvn-theme' ); ?></span> <a href="tel:0466873572"><?php the_field( 'cu_kyoto_phone' ); ?></a></p>
                   <p class="branch-address__detail"><span><?php _e( 'Email', 'mmjvn-theme' ); ?></span> <a href="mailto:contact@mmj.vn"><?php the_field( 'cu_kyoto_email' ); ?></a></p>
-                  <p class="branch-address__detail"><span><?php _e( 'Social', 'mmjvn-theme' ); ?></span> <a href="#" class="social"><i class="fa fa-facebook"></i></a><a href="#" class="social"><i class="fa fa-google-plus"></i></a><a href="#" class="social"><i class="fa fa-twitter"></i></a><a href="#" class="social"><i class="fa fa-youtube"></i></a></p>
+                  <!-- <p class="branch-address__detail"><span><?php _e( 'Social', 'mmjvn-theme' ); ?></span> <a href="#" class="social"><i class="fa fa-facebook"></i></a><a href="#" class="social"><i class="fa fa-google-plus"></i></a><a href="#" class="social"><i class="fa fa-twitter"></i></a><a href="#" class="social"><i class="fa fa-youtube"></i></a></p> -->
                 </div>
                 <!-- /.branch-address -->
 
@@ -106,7 +106,7 @@ get_header(); ?>
                   <p class="branch-address__detail"><span><?php _e( 'Địa chỉ', 'mmjvn-theme' ); ?></span> <?php the_field( 'cu_tokyo_address' ) ?></p>
                   <p class="branch-address__detail"><span><?php _e( 'Điện thoại', 'mmjvn-theme' ); ?></span> <a href="tel:0466873572"><?php the_field( 'cu_tokyo_phone' ); ?></a></p>
                   <p class="branch-address__detail"><span><?php _e( 'Email', 'mmjvn-theme' ); ?></span> <a href="mailto:contact@mmj.vn"><?php the_field( 'cu_tokyo_email' ); ?></a></p>
-                  <p class="branch-address__detail"><span><?php _e( 'Social', 'mmjvn-theme' ); ?></span> <a href="#" class="social"><i class="fa fa-facebook"></i></a><a href="#" class="social"><i class="fa fa-google-plus"></i></a><a href="#" class="social"><i class="fa fa-twitter"></i></a><a href="#" class="social"><i class="fa fa-youtube"></i></a></p>
+                  <!-- <p class="branch-address__detail"><span><?php _e( 'Social', 'mmjvn-theme' ); ?></span> <a href="#" class="social"><i class="fa fa-facebook"></i></a><a href="#" class="social"><i class="fa fa-google-plus"></i></a><a href="#" class="social"><i class="fa fa-twitter"></i></a><a href="#" class="social"><i class="fa fa-youtube"></i></a></p> -->
                 </div>
                 <!-- /.branch-address -->
 

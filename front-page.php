@@ -88,8 +88,12 @@ get_header(); ?>
   <section class="why-vn text-center">
     <div class="row">
       <div class="small-12 medium-8 medium-centered columns">
-        <h2>Why Viet Nam?</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci magnam, cupiditate quam tenetur rem minus? Quibusdam veritatis cumque dolorum voluptatum amet assumenda tempore, provident nihil voluptate nemo ullam vel tempora.</p>
+        <?php 
+        if ( function_exists( 'ot_get_option' ) ) {
+          echo ot_get_option( 'why_viet_nam' );
+        }
+
+        ?>
       </div>
     </div>
   </section>
@@ -110,32 +114,26 @@ get_header(); ?>
       <div class="medium-12 large-4 columns">
         
         <div class="activity">
+          <?php 
+          if ( function_exists( 'ot_get_option' ) ) {
+            $accs = ot_get_option( 'accordion' );
+          }
+          ?>
     
           <ul class="accordion" data-accordion>
-            <li class="accordion-navigation active">
-              <a href="#activity1">Inhouse Solutions</a>
-              <div id="activity1" class="content active">
-                Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <?php if ( !empty( $accs ) ) : ?>
+          <?php $count = 1; ?>
+          <?php foreach ( $accs as $acc ) : ?>
+
+            <li class="accordion-navigation <?php echo ( $count === 1 ) ? 'active' : ''; ?>">
+              <a href="#activity<?php echo $count; ?>"><?php echo $acc['title']; ?></a>
+              <div id="activity<?php echo $count; ?>" class="content <?php echo ( $count === 1 ) ? 'active' : ''; ?>">
+                <?php echo $acc['acc_content']; ?>
               </div>
             </li>
-            <li class="accordion-navigation">
-              <a href="#activity2">Web-Outsourcing Solutions</a>
-              <div id="activity2" class="content">
-                Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </div>
-            </li>
-            <li class="accordion-navigation">
-              <a href="#activity3">Web Marketing</a>
-              <div id="activity3" class="content">
-                Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </div>
-            </li>
-            <li class="accordion-navigation">
-              <a href="#activity4">Web Design</a>
-              <div id="activity4" class="content">
-                Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </div>
-            </li>
+          <?php $count += 1; ?>
+          <?php endforeach; ?>
+          <?php endif; ?>
           </ul>
     
         </div>
@@ -145,39 +143,51 @@ get_header(); ?>
       <div class="medium-12 large-8 columns">
         
         <div class="company-info">
-          
+        <?php 
+        if ( function_exists( 'ot_get_option' ) ) :
+            $tabs = ot_get_option( 'tabs' );
+          ?>
+          <?php if ( !empty( $tabs ) ) : ?>
+          <?php $count = 1; ?>
+
           <ul class="tabs" data-tab>
-            <li class="tab-title active"><a href="#info1">Overview Info</a></li>
-            <li class="tab-title"><a href="#info2">Vision</a></li>
-            <li class="tab-title"><a href="#info3">Strategy</a></li>
-            <li class="tab-title"><a href="#info4">Core Values</a></li>
+            <?php foreach ( $tabs as $tab ) : ?>
+            <li class="tab-title <?php echo ( $count === 1 ) ? 'active' : ''; ?>"><a href="#info<?php echo $count; ?>"><?php echo $tab['title']; ?></a></li>
+            <?php $count +=1; ?>
+            <?php endforeach; ?>
           </ul>
           <div class="tabs-content">
-            <div class="content clearfix active" id="info1">
-              <img src="<?php echo get_template_directory_uri() . '/images/company/tab-content-img.jpg' ?>" alt="Company diccusion">
-              <p>We use: Agile mindset to improve everything.</p>
-              <p>We build: Products to “train” the market, not only market “choose” products.</p>
-              <p>We build: “The real world for learning”.</p>
+            <?php $count = 1; ?>
+            <?php foreach ( $tabs as $tab ) : ?>
+            <div class="content clearfix <?php echo ( $count === 1 ) ? 'active' : ''; ?>" id="info<?php echo $count; ?>">
+              <?php if ( !empty( $tab['tab_image'] ) ) : ?>
+              <img src="<?php echo esc_url( $tab['tab_image'] ); ?>" alt="<?php echo $tab['title']; ?>">
+              <?php endif; ?>
+              <?php echo $tab['tab_content']; ?>
             </div>
-            <div class="content clearfix" id="info2">
-              <p>This is the second info of the basic tab example. This is the second info of the basic tab example.</p>
-            </div>
-            <div class="content clearfix" id="info3">
-              <p>This is the third info of the basic tab example. This is the third info of the basic tab example.</p>
-            </div>
-            <div class="content clearfix" id="info4">
-              <p>This is the fourth panel of the basic tab example. This is the fourth panel of the basic tab example.</p>
-            </div>
+            <?php $count += 1; ?>
+            <?php endforeach; ?>
           </div>
+          <?php endif; ?>
+        <?php endif; ?>
     
         </div>
         <!-- /.company-info -->
     
       </div>
     
+      <?php 
+      if ( function_exists( 'ot_get_option' ) ) :
+        $page_id = ot_get_option( 'view_more_link' );
+        $view_more_link = get_page_link( $page_id );
+      ?>
+      <pre>
+        <?php var_dump($link); ?>
+      </pre>
       <div class="small-12 columns text-center">
-        <a href="#" class="button radius button--brief-info">View more</a>
+        <a href="<?php echo esc_url( $view_more_link ); ?>" class="button radius button--brief-info"><?php _e( 'Xem thêm' ); ?></a>
       </div>
+      <?php endif; ?>
     </div>
     <!-- /.row -->
   </section>
@@ -258,75 +268,41 @@ get_header(); ?>
 
       </div>
       <div class="small-12 medium-8 medium-pull-4 columns">
+        <?php 
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 6
+          );
+
+        $the_query = new WP_Query( $args );
+        ?>
         <div id="news-recent-slider" class="owl-carousel owl-theme">
-              
-          <div class="item">
-            <article class="news">
-              <a href="#"><img src="<?php echo get_template_directory_uri() . '/images/news/news-1.jpg' ?>" alt="news"></a>
-              <div class="news-content">
-                <header>
-                  <h2 class="news-content__title"><a href="#">[Company Trip] Danang - Where the love story begin</a></h2>
-                  <div class="news-content__meta">
-                    by <a href="#">Admin</a> | <time datetime="2015-06-25">25 Jun, 2015</time>
-                  </div>
-                </header>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quas in commodi minima iusto. Consequatur quas facilis saepe praesentium, fugit corrupti cumque, quo.</p>
-              </div>
-              <!-- /.news-content -->
-            </article>
-            <!-- /.news -->
-          </div>
           
+          <?php if ( $the_query->have_posts() ) : while( $the_query->have_posts() ) : $the_query->the_post(); ?>
           <div class="item">
             <article class="news">
-              <a href="#"><img src="<?php echo get_template_directory_uri() . '/images/news/news-2.jpg' ?>" alt="news"></a>
+              <a href="<?php the_permalink(); ?>">
+              <?php if ( has_post_thumbnail() ) : ?>
+                <?php the_post_thumbnail( 'medium' ); ?>
+              <?php else : ?>
+                <img src="<?php echo get_template_directory_uri() . '/images/news/news-1.jpg' ?>" alt="news">
+              <?php endif; ?>
+              </a>
               <div class="news-content">
                 <header>
-                  <h2 class="news-content__title"><a href="#">Mr.Tasaki - Welcome to the real learning world</a></h2>
+                  <h2 class="news-content__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                   <div class="news-content__meta">
-                    by <a href="#">Admin</a> | <time datetime="2015-06-25">25 Jun, 2015</time>
+                    by <?php the_author(); ?> | <time datetime="<?php the_time( 'Y-m-d' ); ?>"><?php the_time( 'j M, Y' ); ?></time>
                   </div>
                 </header>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quas in commodi minima iusto. Consequatur quas facilis saepe praesentium, fugit corrupti cumque, quo.</p>
+                <?php the_excerpt(); ?>
               </div>
               <!-- /.news-content -->
             </article>
             <!-- /.news -->
           </div>
-
-          <div class="item">
-            <article class="news">
-              <a href="#"><img src="<?php echo get_template_directory_uri() . '/images/news/news-1.jpg' ?>" alt="news"></a>
-              <div class="news-content">
-                <header>
-                  <h2 class="news-content__title"><a href="#">Mr.Tasaki - Welcome to the real learning world</a></h2>
-                  <div class="news-content__meta">
-                    by <a href="#">Admin</a> | <time datetime="2015-06-25">25 Jun, 2015</time>
-                  </div>
-                </header>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quas in commodi minima iusto. Consequatur quas facilis saepe praesentium, fugit corrupti cumque, quo.</p>
-              </div>
-              <!-- /.news-content -->
-            </article>
-            <!-- /.news -->
-          </div>
-
-          <div class="item">
-            <article class="news">
-              <a href="#"><img src="<?php echo get_template_directory_uri() . '/images/news/news-1.jpg' ?>" alt="news"></a>
-              <div class="news-content">
-                <header>
-                  <h2 class="news-content__title"><a href="#">Mr.Tasaki - Welcome to the real learning world</a></h2>
-                  <div class="news-content__meta">
-                    by <a href="#">Admin</a> | <time datetime="2015-06-25">25 Jun, 2015</time>
-                  </div>
-                </header>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quas in commodi minima iusto. Consequatur quas facilis saepe praesentium, fugit corrupti cumque, quo.</p>
-              </div>
-              <!-- /.news-content -->
-            </article>
-            <!-- /.news -->
-          </div>
+          <?php endwhile; endif; ?>
+          <?php wp_reset_postdata(); ?>
 
         </div>
         <!-- /#news-recent-slider -->
@@ -349,17 +325,8 @@ get_header(); ?>
     <div class="row">
       <div class="medium-12 columns">
 
-        <h2>Subscribe To Our Newsletter</h2>
-        <form action="/" class="form-newsletter">
-          <div class="row">
-            <div class="small-12 medium-9 columns">
-              <input type="email" name="newsletter" id="newsletter" placeholder="Your email address">
-            </div>
-            <div class="small-12 medium-3 columns">
-              <button type="submit">Subcribe</button>
-            </div>
-          </div>
-        </form>     
+        <h2><?php _e( 'Đăng ký nhận tin', 'mmjvn-theme' ); ?></h2>
+        <?php echo do_shortcode( '[contact-form-7 id="1656" html_class="form-newsletter" title="Frontpage subscribe"]' ) ?>     
       </div>
     </div>
     <!-- /.row -->

@@ -7,38 +7,45 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+  <!-- MAIN CONTENT
+  ================================================== -->
 
-		<?php while ( have_posts() ) : the_post(); ?>
-			
-			<?php if ( in_category( 'tuyen-dung' ) ) : ?>
+	<div class="polygon-bg padding-big">
+	  <div class="row">
+	  	<div class="small-12 <?php echo ( in_category( 'tuyen-dung' ) ? '' : 'medium-9' ); ?> columns">
 
-			<?php get_template_part( 'template-parts/content', 'recruitment' ); ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+				
+				<?php if ( in_category( 'tuyen-dung' ) ) : ?>
 
-			<?php else : ?>
+				<?php get_template_part( 'template-parts/content', 'recruitment' ); ?>
 
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
+				<?php else : ?>
 
+				<?php get_template_part( 'template-parts/content', 'single' ); ?>
+
+				<?php get_template_part( 'template-parts/content', 'related' ); ?>
+
+				<?php endif; ?>
+
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template.
+					// if ( comments_open() || get_comments_number() ) :
+					// 	comments_template();
+					// endif;
+				?>
+
+			<?php endwhile; // End of the loop. ?>
+
+			</div>
+
+			<?php if ( !in_category( 'tuyen-dung' ) ) : ?>
+			<div class="small-12 medium-3 columns">
+				<?php get_sidebar(); ?>
+			</div>
 			<?php endif; ?>
-
-
-			<?php // the_post_navigation(); ?>
-
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				// if ( comments_open() || get_comments_number() ) :
-				// 	comments_template();
-				// endif;
-			?>
-
-		<?php endwhile; // End of the loop. ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php if ( !in_category( 'tuyen-dung' ) ) : ?>
-<?php get_sidebar(); ?>
-<?php endif; ?>
+    </div>
+    <!-- /.row -->
+  </div>
 
 <?php get_footer(); ?>

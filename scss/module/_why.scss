@@ -8,7 +8,7 @@
 	h5,
 	h6 {
 		color: $steel;
-		font-weight: 100;
+		// font-weight: 100;
 		font-size: 2.25rem;
 	}
 }
@@ -68,9 +68,17 @@
 			padding: 0.31em 0 0.31em 1.25em;
 		}
 
-		&.active > a:after {
+		&.active {
+			
+			a {
+				color: $primary-color;
+			}
+
+			> a:after {
 				content: '\f056';
-		}
+				color: $tuatara;
+			}
+		} 
 	}
 }
 
@@ -130,6 +138,7 @@
 
 		p {
 			line-height: 1.2;
+			font-style: italic;
 		}
 	}
 }

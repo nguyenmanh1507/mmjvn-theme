@@ -7,27 +7,17 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+<article class="blog-post clearfix" role="main">
+  <div class="blog-post__content blog-post__content--single">
+  	<?php the_title( '<h3 class="blog-post-title blog-post-title--single">', '</h3>' ); ?>
 
-		<div class="entry-meta">
-			<?php mmjvn_theme_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+    <p class="blog-info">by <?php the_author(); ?> | <?php echo the_time( 'j M, Y' ); ?></p>
+    <?php get_template_part( 'template-parts/content', 'meta-data' ); ?>
 
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mmjvn-theme' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+    <?php the_content(); ?>
 
-	<footer class="entry-footer">
-		<?php mmjvn_theme_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+  </div>
+</article>
+<!-- /.blog-post -->
+
 

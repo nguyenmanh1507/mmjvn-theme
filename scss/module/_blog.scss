@@ -17,12 +17,12 @@
 		height: 84px;
 		text-align: center;
 		color: $white;
-		padding-top: 20px;
+		padding-top: 15px;
 		font-weight: 300;
 		float: left;
 
 		> div {
-			line-height: 1.3em;
+			line-height: 1.5em;
 
 			> span {
 				font-size: 1.875rem;
@@ -97,17 +97,6 @@
 						&:hover {
 							color: $primary-color;
 						}
-					}
-				}
-			}
-
-			&--footer-tags {
-
-				ul li {
-
-					&:first-child {
-						color: $primary-color;
-						margin-right: 3%;
 					}
 				}
 			}
