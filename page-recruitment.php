@@ -14,24 +14,10 @@
 get_header(); ?>
 
 
-  <!-- BREADCRUMB
+    <!-- BREADCRUMB
   ================================================== -->
-  
-  <div class="breadcrumb">
-    <div class="row">
-      <div class="small-12 columns">
         
-        <ul class="bc">
-          <li class="bc__item"><a href="#">Home</a></li>
-          <li class="bc__item">Recruitment</li>
-        </ul>
-        <!-- /.bc -->
-
-      </div>
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.breadcrumb -->
+  <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
   
   <!-- END BREADCRUMB
   ================================================== -->
@@ -40,6 +26,22 @@ get_header(); ?>
 
   <!-- MAIN CONTENT
   ================================================== -->
+  <div class="row show-for-medium-up">
+    <div class="small-11 small-offset-1 columns">
+      <div class="recruitment-intro padding-big">
+      <?php 
+      if ( have_posts() ) : while ( have_posts() ) : the_post();
+        the_content();
+      endwhile;
+        else : 
+          echo 'no post';
+      endif;
+      ?>
+      </div>
+      <!-- /.recruitment-intro -->
+    </div>
+  </div>
+  <!-- /.row -->
   
   <div class="polygon-bg padding-big">
 
@@ -47,14 +49,10 @@ get_header(); ?>
 
       <div class="row">
         <div class="medium-6 medium-centered columns text-center">
-        <?php 
-        if ( have_posts() ) : while ( have_posts() ) : the_post();
-        	the_content();
-        endwhile;
-        	else : 
-         		echo 'no post';
-        endif;
-        ?>
+          <?php 
+          if ( function_exists( 'ot_get_option' ) ) $rc_intro = ot_get_option( 'rc_intro' );
+          echo $rc_intro;
+          ?>
         </div>
       </div>
       <!-- /.row -->
@@ -67,7 +65,7 @@ get_header(); ?>
             <?php 
             $args = array(
             		'category_name' => 'tuyen-dung',
-                'posts_per_page' => 8
+                'posts_per_page' => 12
             	);
 
             $the_query = new WP_Query( $args );

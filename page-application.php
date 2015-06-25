@@ -14,12 +14,21 @@
 get_header(); ?>
 
 
+  <!-- BREADCRUMB
+  ================================================== -->
+        
+  <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
+  
+  <!-- END BREADCRUMB
+  ================================================== -->
+
+
   <!-- MAIN CONTENT
   ================================================== -->
 
   <div class="polygon-bg padding-big">
     <div class="row">
-      <div class="small-12 columns">
+      <div id="select-position" class="small-12 columns" data-pos="<?php echo isset( $_GET['pos'] )? $_GET['pos'] : ''; ?>">
 
         <?php the_content(); ?>
 

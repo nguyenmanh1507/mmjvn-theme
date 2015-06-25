@@ -267,7 +267,13 @@
 	.member__role {
 		font-style: italic;
 		font-size: 0.875rem;
-		line-height: 1em;
+		display: block;
+		margin: -3px 0 10px;
+	}
+
+	.member__descr {
+		line-height: 1.2em;
+		margin-bottom: 10px;
 	}
 }
 
@@ -277,8 +283,8 @@
 
 .timeline-column {
 	background-color: $iron3;
-	border-radius: 5px;
-	box-shadow: inset -1px 2px 2px rgba($black, .2);
+	border-radius: 4px;
+	box-shadow: inset 0px 3px 3px rgba($black, .2);
 	height: 100%;
 	width: 10px;
 	position: absolute;
@@ -290,3 +296,4 @@
 		left: 3%;
 	}
 }
+

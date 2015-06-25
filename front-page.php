@@ -181,9 +181,6 @@ get_header(); ?>
         $page_id = ot_get_option( 'view_more_link' );
         $view_more_link = get_page_link( $page_id );
       ?>
-      <pre>
-        <?php var_dump($link); ?>
-      </pre>
       <div class="small-12 columns text-center">
         <a href="<?php echo esc_url( $view_more_link ); ?>" class="button radius button--brief-info"><?php _e( 'Xem thêm' ); ?></a>
       </div>
@@ -210,26 +207,42 @@ get_header(); ?>
           
           <div class="row">
             <div class="medium-6 medium-centered columns text-center">
-              <h3>Join Us!</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus ratione, quibusdam dolores quod temporibus quidem hic esse. Minima labore a voluptatum.</p>
+              <?php if ( function_exists( 'ot_get_option' ) ) : ?>
+                <?php echo ot_get_option( 'join_us' ); ?>
+              <?php endif; ?>
             </div>
           </div>
           <!-- /.row -->
 
           <ul class="infographic-tab" data-tab>
-            <li class="tab-title active"><a href="#ifg-1">Recruitment Process</a></li>
-            <li class="tab-title"><a href="#ifg-2">Career Path</a></li>
+            <li class="tab-title active"><a href="#ifg-1"><?php _e( 'Recruitment Process', 'mmjvn-theme' ); ?></a></li>
+            <li class="tab-title"><a href="#ifg-2"><?php _e( 'Career Path', 'mmjvn-theme' ); ?></a></li>
           </ul>
           <div class="tabs-content">
             <div class="content active" id="ifg-1">
-              <img src="<?php echo get_template_directory_uri() . '/images/infographic/ifg-1.png' ?>" alt="infographic">
+              <?php if ( function_exists( 'ot_get_option' ) ) : ?>
+              <?php $infographic = ot_get_option( 'recruitment_process' ); ?>
+              <?php $infographic_small = ot_get_option( 'recruitment_process_mobile' ); ?>
+              <img src="<?php echo esc_url( $infographic ); ?>" class="show-for-medium-up" alt="infographic">
+              <img src="<?php echo esc_url( $infographic_small ) ?>" class="show-for-small-only" alt="infographic">
+              <?php endif; ?>
             </div>
             <div class="content" id="ifg-2">
-              <img src="<?php echo get_template_directory_uri() . '/images/infographic/ifg-2.png' ?>" alt="infographic">
+              <?php if ( function_exists( 'ot_get_option' ) ) : ?>
+              <?php $infographic = ot_get_option( 'career_path' ); ?>
+              <?php $infographic_small = ot_get_option( 'career_path_mobile' ); ?>
+              <img src="<?php echo esc_url( $infographic ); ?>" class="show-for-medium-up" alt="infographic">
+              <img src="<?php echo esc_url( $infographic_small ) ?>" class="show-for-small-only" alt="infographic">
+              <?php endif; ?>
             </div>
           </div>
-
-          <a href="#" class="button button--black">Let's go</a>
+          <?php 
+          if ( function_exists( 'ot_get_option' ) ) :
+            $page_id = ot_get_option( 'lets_go_link' );
+            $lets_go_link = get_page_link( $page_id );
+          ?>
+          <a href="<?php echo esc_url( $lets_go_link ); ?>" class="button button--black"><?php _e( "Let's go", "mmjvn-theme" ); ?></a>
+          <?php endif; ?>
 
         </section>
         <!-- /.infographic -->
@@ -256,9 +269,12 @@ get_header(); ?>
       <div class="small-12 medium-4 medium-push-8 columns">
         
         <div class="recent-news-description">
-          <h3>Recent News</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam vitae ipsam, eveniet tempora dolor! Voluptates vero alias quis odit! Veniam animi, ipsum nihil asperiores illum eaque ex qui. A quidem odit, nihil eum!</p>
-          <a href="#">View more</a>
+          <?php 
+          if ( function_exists( 'ot_get_option' ) ) {
+            $recent_news = ot_get_option( 'recent_news' );
+            echo $recent_news;
+          } 
+          ?>
         </div>
         <!-- /.recent-news-description -->
         <div class="recent-news-navigation">
@@ -285,17 +301,23 @@ get_header(); ?>
               <?php if ( has_post_thumbnail() ) : ?>
                 <?php the_post_thumbnail( 'medium' ); ?>
               <?php else : ?>
-                <img src="<?php echo get_template_directory_uri() . '/images/news/news-1.jpg' ?>" alt="news">
+                <img src="<?php echo get_template_directory_uri() . '/images/placeholder-img.jpg' ?>" alt="news">
               <?php endif; ?>
               </a>
               <div class="news-content">
+                <?php 
+                $title = get_the_title();
+                $excerpt = get_the_excerpt();
+                ?>
                 <header>
-                  <h2 class="news-content__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                  <h2 class="news-content__title">
+                    <a href="<?php the_permalink(); ?>"><?php echo short_text( $title, 35, '...' ); ?></a>
+                  </h2>
                   <div class="news-content__meta">
                     by <?php the_author(); ?> | <time datetime="<?php the_time( 'Y-m-d' ); ?>"><?php the_time( 'j M, Y' ); ?></time>
                   </div>
                 </header>
-                <?php the_excerpt(); ?>
+                <p><?php echo short_text( $excerpt, 250, '...' ); ?></p>
               </div>
               <!-- /.news-content -->
             </article>

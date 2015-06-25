@@ -13,6 +13,18 @@
 		a {
 			font-size: 24px;
 			@extend %blue-hover;
+
+			.fa-ask {
+				background: url(images/social/spritesheet.png) no-repeat 0 0;
+				background-size: 42px 24px;
+				display: inline-block;
+				height: 24px;
+				width: 21px;
+
+				&:hover {
+					background-position: -21px 0;
+				}
+			}
 		}
 
 		@media only screen and (max-width: 40rem) {
@@ -192,7 +204,7 @@
 .top-bar-section ul li.has-form > a {
 	display: inline-block;
 	height: auto;
-	margin-top: 14px;
+	margin-top: 0.875rem;
 
 	@extend %button-blue;
 	@extend %tomato-hover;
@@ -247,7 +259,7 @@
 		}
 
 		li {
-			margin-bottom: 30px;
+			margin-bottom: 0.9375rem;
 		}
 	}
 

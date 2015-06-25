@@ -15,22 +15,8 @@ get_header(); ?>
 
   <!-- BREADCRUMB
   ================================================== -->
-  
-  <div class="breadcrumb">
-    <div class="row">
-      <div class="small-12 columns">
         
-        <ul class="bc">
-          <li class="bc__item"><a href="#">Home</a></li>
-          <li class="bc__item">About Us</li>
-        </ul>
-        <!-- /.bc -->
-
-      </div>
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.breadcrumb -->
+  <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
   
   <!-- END BREADCRUMB
   ================================================== -->
@@ -100,7 +86,7 @@ get_header(); ?>
             <li class="timeline__item clearfix">
               <figure class="member">
                 <div class="member__avatar" >
-                  <img src="<?php echo $timeline['opt_au_team_avatar']; ?>" alt="member avatar">
+                  <a href="<?php echo get_permalink( $timeline['opt_au_team_link'] ); ?>"><img src="<?php echo $timeline['opt_au_team_avatar']; ?>" alt="member avatar"></a>
                 </div>
                 <figcaption>
                   <h3 class="member__name"><?php echo $timeline['opt_au_team_name'] ?></h3>

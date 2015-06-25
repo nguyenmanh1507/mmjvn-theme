@@ -71,10 +71,10 @@ function mmjvn_theme_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'mmjvn_theme_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+	// add_theme_support( 'custom-background', apply_filters( 'mmjvn_theme_custom_background_args', array(
+	// 	'default-color' => 'ffffff',
+	// 	'default-image' => '',
+	// ) ) );
 }
 endif; // mmjvn_theme_setup
 add_action( 'after_setup_theme', 'mmjvn_theme_setup' );
@@ -144,7 +144,7 @@ add_action( 'wp_enqueue_scripts', 'mmjvn_theme_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+// require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -268,7 +268,38 @@ add_action('wp_head', array('F5_TOP_BAR_WALKER','items_remove_defaut_wrapper'));
  * Apply Now button shortcode
  */
 function apply_now_button( $attrs ) {
-	return '<a href="' . $attrs['url'] . '" class="button--apply">' . $attrs['text'] . '</a>';
+	return '<a href="' . $attrs['url'] . '?pos=' . $attrs['position'] . '" class="button--apply">' . $attrs['text'] . '</a>';
 }
 
 add_shortcode( 'apply', 'apply_now_button' );
+
+/**
+ * Shorttext function
+ */
+function short_text( $text, $max_length, $extension = '' ) {
+
+	if ( mb_strlen( $text ) > $max_length ) {
+	    $offset = $max_length - mb_strlen( $text );
+	    $text = mb_substr( $text, 0, mb_strrpos( $text, ' ', $offset ) ) . $extension;
+	}
+
+	return $text;
+
+}
+
+/**
+ * Exclude page from search
+ */
+function SearchFilter( $query ) {
+	if ( $query->is_search ) {
+		$query->set( 'post_type', 'post' );
+	}
+	return $query;
+}
+
+add_filter( 'pre_get_posts','SearchFilter' );
+
+/**
+ * Remove Option Tree Menu
+ */
+add_filter( 'ot_show_pages', '__return_false' );

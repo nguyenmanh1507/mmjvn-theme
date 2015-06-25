@@ -46,20 +46,28 @@ $the_query = new WP_Query( $args );
     <div class="item">
 
       <article class="related-post-item">
-        <?php if ( has_post_thumbnail() ) : ?>
         <a href="<?php the_permalink(); ?>">
+        <?php if ( has_post_thumbnail() ) : ?>
           <?php the_post_thumbnail( 'medium' ); ?>
+        <?php else : ?>
+          <img src="<?php echo get_template_directory_uri() . '/images/placeholder-img.jpg' ?>" alt="MMJ Viet Nam">
+        <?php endif; ?>
         </a>
         <div class="rpc-publish-date"><span><?php the_time( 'j' ); ?></span> <?php the_time( 'M' ); ?></div>
-        <?php endif; ?>
         <div class="related-post-content">
+          <?php 
+          $title = get_the_title();
+          $excerpt = get_the_excerpt();
+          ?>
           <header>
-            <h3 class="rpc__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <h3 class="rpc__title">
+              <a href="<?php the_permalink(); ?>"><?php echo short_text( $title, 35, '...' ); ?></a>
+            </h3>
             <div class="rpc__meta">
               by <?php the_author(); ?>
             </div>
           </header>
-          <?php the_excerpt(); ?>
+          <p><?php echo short_text( $excerpt, 250, '...' ); ?></p>
         </div>
         <!-- /.news-content -->
       </article>

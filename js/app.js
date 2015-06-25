@@ -125,6 +125,42 @@ var app = (function(document, $) {
 		  	$('input, textarea').placeholder();
 		  }
 
+		  // Auto select position
+		  var userChoosePosition = $('#select-position').data('pos');
+		  var allPosition = $('#af-pos').children('option');
+		  var posLength = allPosition.length;
+
+		  for(var i = 0; i < posLength; i++) {
+		  	var $t = $(allPosition[i]);
+
+		  	// Get value of option and replace 
+		  	// " " -> "-", "/" -> "" and lower case it.
+		  	// ex: Front End Developer -> front-end-devloper
+		  	var position = $(allPosition[i]).val()
+		  																	.replace(/\s+/g, '-')
+		  																	.replace('/', '')
+		  																	.toLowerCase();
+
+				if( position === userChoosePosition ) {
+					$t.prop('selected', true);
+				} else {
+					$t.prop('selected', false);
+				}
+		  }
+
+		  // Disable apply button in post
+		  // when job unavailable
+		  var btnState = $('.job-detail__meta').hasClass('is-available');
+
+		  if(!btnState) {
+
+			  $('.button--apply').addClass('not-allow')
+			  									 .click(function(e) {
+													  	e.preventDefault();
+													  })
+			  									 .attr('href', '#');
+		  }
+
 		};
 	return {
 		init: _init

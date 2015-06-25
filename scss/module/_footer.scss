@@ -17,20 +17,31 @@
 		color: $primary-color;
 	}
 
+	.fa-ask-footer {
+		background: url(images/social/spritesheet.png) no-repeat 0 0;
+		display: inline-block;
+		width: 21px;
+		height: 21px;
+		vertical-align: bottom;
+		margin-right: 20px;
+
+		&:hover {
+			background-position: -21px 0;
+		}
+	}
+
 	.widget-title {
 		color: $steel;
-		font-size: 1rem;
+		font-size: 1.125rem;
 		font-weight: 700;
+		margin-bottom: 1em;
 	}
 
 	.widget-list {
 		margin: 0;
 
 		li {
-
-			a {
-				@extend %clearfix;
-			}
+			@extend %clearfix;
 
 			i.fa {
 				display: block;

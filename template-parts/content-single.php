@@ -16,6 +16,8 @@
 
     <?php the_content(); ?>
 
+    <?php echo do_shortcode('[fbcomments]'); ?>
+
   </div>
 </article>
 <!-- /.blog-post -->

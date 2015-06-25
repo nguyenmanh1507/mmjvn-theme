@@ -30,27 +30,56 @@
       <div class="row">
         
         <div class="medium-6 columns">
-          
+          <?php
+          if ( function_exists( 'ot_get_option' ) ) :
+            $socials = ot_get_option( 'company_social' );
+          ?>
           <ul class="socials-list inline-list">
-            <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+            <?php 
+            foreach ( $socials as $social ) :
+            ?>
+            <li>
+              <a href="<?php echo esc_url( $social['href'] ); ?>" target="_blank">
+              <?php 
+              switch ( strtolower( $social['name'] ) ) {
+                case 'facebook':
+                  echo '<i class="fa fa-facebook-square"></i>';
+                  break;
+
+                case 'google+':
+                  echo '<i class="fa fa-google-plus-square"></i>';
+                  break;
+
+                case 'twitter':
+                  echo '<i class="fa fa-twitter-square"></i>';
+                  break;
+
+                case 'youtube':
+                  echo '<i class="fa fa-youtube-square"></i>';
+                  break;
+
+                case 'ask.fm':
+                  echo '<i class="fa-ask"></i>';
+                  break;
+
+                default:
+                  echo $social['name'];
+                  break;
+              }
+              ?>
+              </a>
+            </li>
+            <?php endforeach; ?>
           </ul>
           <!-- /.socials-list -->
-
+          <?php endif; ?>
         </div>
 
         <div class="medium-6 columns">
           
           <div class="lang-and-search">
             <div class="search-form-wrap">
-              <form action="/" class="search-form">
-                <input type="text" name="s" id="s" class="search-form__field" placeholder="Search on MMJVietnam..." required>
-                <button type="submit" class="search-form__btn"><i class="fa fa-search"></i></button>
-                <span class="search-form__icon"><i class="fa fa-search"></i></span>
-              </form>
+              <?php get_search_form(); ?>
             </div>
             <!-- /.search-form-wrap -->
 

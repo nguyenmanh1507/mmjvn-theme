@@ -14,6 +14,15 @@
 get_header(); ?>
 
 
+  <!-- BREADCRUMB
+  ================================================== -->
+        
+  <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
+  
+  <!-- END BREADCRUMB
+  ================================================== -->
+
+
   <!-- MAIN CONTENT
   ================================================== -->
 
@@ -80,7 +89,7 @@ get_header(); ?>
               
               <div class="small-12 medium-6 columns">
                 <?php
-                $kyoto_map = get_field( 'cu_kyoto_location' )['address']; 
+                $kyoto_map = urlencode_deep(get_field( 'cu_kyoto_location' )['address']); 
                 ?>
 
                 <div class="branch-map">
@@ -114,7 +123,7 @@ get_header(); ?>
               
               <div class="small-12 medium-6 columns">
                 <?php
-                $tokyo_map = get_field( 'cu_tokyo_location' )['address']; 
+                $tokyo_map = urlencode_deep(get_field( 'cu_tokyo_location' )['address']); 
                 ?>
 
                 <div class="branch-map">

@@ -1,3 +1,18 @@
+.recruitment-intro {
+
+	> h2,
+	> h3,
+	> h4 {
+		font-weight: 300;
+	}
+
+	p span {
+		font-size: 1.5rem;
+		font-weight: 300;
+		font-style: italic;
+	}
+}
+
 .recruitment {
 
 	h1,
@@ -6,7 +21,7 @@
 	h4 {
 		color: $steel;
 		font-size: 2.25rem;
-		font-weight: 300;
+		// font-weight: 300;
 		margin: 0 0 0.56em;
 	}
 }
@@ -25,7 +40,7 @@
 
 .position {
 	background-color: $white;
-	border-radius: 5px;
+	border-radius: 10px;
 	border: 5px solid $iron2;
 	text-align: center;
 	width: 219px;
@@ -52,6 +67,7 @@
 
 	.position__name {
 		font-size: 1.875rem;
+		font-style: italic;
 		font-weight: 300;
 		line-height: 1em;
 		height: 68px;

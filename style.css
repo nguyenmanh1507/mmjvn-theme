@@ -5030,7 +5030,7 @@ a:hover {
   clear: both;
 }
 
-.widget-footer .widget-list li a:after, .related-post:after {
+.widget-footer .widget-list li:after, .related-post:after {
   content: "";
   display: table;
   clear: both;
@@ -5047,6 +5047,26 @@ a:hover {
   background-position: left top, right top, right bottom, left bottom;
 }
 
+@media only screen and (max-width: 50rem) {
+  .polygon-bg {
+    background-image: url(images/polygon-2.png), url(images/polygon-4.png);
+    background-repeat: no-repeat;
+    background-position: right top, left bottom;
+  }
+}
+
+.polygon-bg--a {
+  background-image: url(images/polygon-2.png), url(images/polygon-4.png);
+  background-repeat: no-repeat;
+  background-position: right top, left bottom;
+}
+
+@media only screen and (max-width: 50rem) {
+  .polygon-bg--a {
+    background-image: none;
+  }
+}
+
 .breadcrumb {
   background-color: #cccccc;
   border-top: 1px solid #FFFFFF;
@@ -5055,13 +5075,13 @@ a:hover {
 
 .breadcrumb .bc {
   margin: 0;
+  padding: 0.92em 0;
 }
 
 .breadcrumb .bc .bc__item {
   color: #2f383d;
   display: inline-block;
   font-size: 1.5rem;
-  padding: 0.92em 0;
 }
 
 .breadcrumb .bc .bc__item:after {
@@ -5081,6 +5101,12 @@ a:hover {
 .paginate {
   text-align: center;
   margin-top: 1.88em;
+}
+
+@media only screen and (max-width: 40rem) {
+  .paginate {
+    margin-bottom: 1.88em;
+  }
 }
 
 .paginate > span,
@@ -5110,6 +5136,17 @@ a:hover {
   margin: 0 auto;
 }
 
+span.wpcf7-not-valid-tip {
+  padding: 10px;
+  background-color: tomato;
+  color: white;
+}
+
+div.wpcf7-validation-errors {
+  border: none;
+  color: tomato;
+}
+
 .top-header {
   padding: 10px 0 0;
 }
@@ -5126,6 +5163,18 @@ a:hover {
 
 .top-header .socials-list a {
   font-size: 24px;
+}
+
+.top-header .socials-list a .fa-ask {
+  background: url(images/social/spritesheet.png) no-repeat 0 0;
+  background-size: 42px 24px;
+  display: inline-block;
+  height: 24px;
+  width: 21px;
+}
+
+.top-header .socials-list a .fa-ask:hover {
+  background-position: -21px 0;
 }
 
 @media only screen and (max-width: 40rem) {
@@ -5293,7 +5342,7 @@ a:hover {
 .top-bar-section ul li.has-form > a {
   display: inline-block;
   height: auto;
-  margin-top: 14px;
+  margin-top: 0.875rem;
 }
 
 .top-bar-section .has-dropdown > a:after {
@@ -5338,7 +5387,7 @@ a:hover {
     margin: 0;
   }
   .top-bar-section ul li {
-    margin-bottom: 30px;
+    margin-bottom: 0.9375rem;
   }
   .top-bar-section ul li > a,
   .top-bar-section li:not(.has-form) a:not(.button) {
@@ -5701,7 +5750,7 @@ a:hover {
 .company-info .tabs-content img {
   display: block;
   float: left;
-  margin-right: 1.25em;
+  margin: 0 1.25em 1.25rem 0;
 }
 
 .company-info .tabs-content p {
@@ -5797,6 +5846,10 @@ a:hover {
   padding-top: 2.5em;
 }
 
+.infographic .tabs-content .content img {
+  margin: 0 auto;
+}
+
 .fp-recent-news {
   padding: 6.25em 0 0;
 }
@@ -5822,8 +5875,10 @@ a:hover {
 .news .news-content {
   background-color: #F9F9F9;
   border: 1px solid #dfdfdf;
+  min-height: 282px;
   padding: 1.25em;
   position: relative;
+  overflow: hidden;
 }
 
 .news .news-content:after {
@@ -5885,7 +5940,6 @@ a:hover {
   line-height: 0.9em;
   font-size: 2.25rem;
   color: #2f383d;
-  font-weight: 300;
   margin: 0 0 0.56em;
 }
 
@@ -6138,10 +6192,24 @@ a:hover {
   color: #24b3cb;
 }
 
+.widget-footer .fa-ask-footer {
+  background: url(images/social/spritesheet.png) no-repeat 0 0;
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  vertical-align: bottom;
+  margin-right: 20px;
+}
+
+.widget-footer .fa-ask-footer:hover {
+  background-position: -21px 0;
+}
+
 .widget-footer .widget-title {
   color: #2f383d;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 700;
+  margin-bottom: 1em;
 }
 
 .widget-footer .widget-list {
@@ -6225,6 +6293,11 @@ a:hover {
 .sidebar .widget-title {
   color: #2f383d;
   font-size: 1.5rem;
+  margin-top: -8px;
+}
+
+.sidebar .widget {
+  margin-bottom: 30px;
 }
 
 .widget-sidebar {
@@ -6277,6 +6350,11 @@ a:hover {
   font-style: italic;
 }
 
+.widget-sidebar .sidebar-newsletter [type="submit"] {
+  max-width: 100%;
+  padding: 10px 25px;
+}
+
 .widget-sidebar .tagcloud a {
   background-color: #FFFFFF;
   color: #9aa7af;
@@ -6313,6 +6391,18 @@ a:hover {
 .widget-sidebar .widget-sidebar__socials .inline-list > li a:hover {
   background-color: #24b3cb;
   color: #FFFFFF;
+}
+
+.widget-sidebar .widget-sidebar__socials .fa-ask-sidebar {
+  background-image: url(images/social/spritesheet-2.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  display: block;
+  height: 100%;
+}
+
+.widget-sidebar .widget-sidebar__socials .fa-ask-sidebar:hover {
+  background-position: -35px 0;
 }
 
 .blog-post .blog-post__featured-img {
@@ -6433,12 +6523,26 @@ a:hover {
   }
 }
 
+.wp-caption {
+  max-width: 100%;
+}
+
 .wp-caption-text {
   color: #2f383d;
   font-weight: 300;
   font-style: italic;
   text-align: center;
   padding: 10px 25px;
+}
+
+.post .button--apply {
+  margin-top: 25px;
+  display: inline-block;
+}
+
+.post .button--apply.not-allow {
+  background-color: #9aa7af;
+  cursor: not-allowed;
 }
 
 #related-post-slider .item {
@@ -6806,7 +6910,13 @@ a:hover {
 .member .member__role {
   font-style: italic;
   font-size: 0.875rem;
-  line-height: 1em;
+  display: block;
+  margin: -3px 0 10px;
+}
+
+.member .member__descr {
+  line-height: 1.2em;
+  margin-bottom: 10px;
 }
 
 .timeline-wrap {
@@ -6815,8 +6925,8 @@ a:hover {
 
 .timeline-column {
   background-color: #cdd6da;
-  border-radius: 5px;
-  box-shadow: inset -1px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.2);
   height: 100%;
   width: 10px;
   position: absolute;
@@ -6831,13 +6941,24 @@ a:hover {
   }
 }
 
+.recruitment-intro > h2,
+.recruitment-intro > h3,
+.recruitment-intro > h4 {
+  font-weight: 300;
+}
+
+.recruitment-intro p span {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
 .recruitment h1,
 .recruitment h2,
 .recruitment h3,
 .recruitment h4 {
   color: #2f383d;
   font-size: 2.25rem;
-  font-weight: 300;
   margin: 0 0 0.56em;
 }
 
@@ -6855,7 +6976,7 @@ a:hover {
 
 .position {
   background-color: #FFFFFF;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 5px solid #cccccc;
   text-align: center;
   width: 219px;
@@ -6883,6 +7004,7 @@ a:hover {
 
 .position .position__name {
   font-size: 1.875rem;
+  font-style: italic;
   font-weight: 300;
   line-height: 1em;
   height: 68px;

@@ -7,36 +7,60 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'mmjvn-theme' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+  <!-- BREADCRUMB
+  ================================================== -->
+        
+  <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
+  
+  <!-- END BREADCRUMB
+  ================================================== -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+	
 
-				<?php
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-				?>
+	<!-- MAIN CONTENT
+  ================================================== -->
+  
+  <div class="polygon-bg padding-big">
+    
+    <div class="row">
+      <div class="small-12 medium-9 columns">
 
-			<?php endwhile; ?>
+        <section class="main-content" role="main">
 
-			<?php the_posts_navigation(); ?>
+					<?php if ( have_posts() ) : ?>
+          <?php the_archive_title( '<h2 class="show-for-sr">', '</h2>' ); ?>
+					
+					<?php while ( have_posts() ) : the_post(); ?>
+					
+					<?php get_template_part( 'template-parts/content', 'custom' ); ?>
 
-		<?php else : ?>
+        	<?php endwhile; else : ?>
 
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+        		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-		<?php endif; ?>
+        	<?php endif; ?>
+
+
+          <!-- Paginate -->
+          <?php get_template_part( 'template-parts/content', 'paginate' ); ?>
+
+        </section>
+        <!-- /.main-content -->
+        
+      </div>
+      <div class="small-12 medium-3 columns">
+				<?php get_sidebar(); ?>
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.polygon-bg -->
+  
+  <!-- END MAIN CONTENT
+  ================================================== -->
 
 		</main><!-- #main -->
 	</section><!-- #primary -->

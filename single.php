@@ -7,10 +7,20 @@
 
 get_header(); ?>
 
+
+  <!-- BREADCRUMB
+  ================================================== -->
+        
+  <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
+  
+  <!-- END BREADCRUMB
+  ================================================== -->
+
+
   <!-- MAIN CONTENT
   ================================================== -->
 
-	<div class="polygon-bg padding-big">
+	<div class="polygon-bg polygon-bg--a padding-big">
 	  <div class="row">
 	  	<div class="small-12 <?php echo ( in_category( 'tuyen-dung' ) ? '' : 'medium-9' ); ?> columns">
 

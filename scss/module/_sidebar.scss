@@ -3,6 +3,11 @@
 	.widget-title {
 		color: $steel;
 		font-size: 1.5rem;
+		margin-top: -8px;
+	}
+
+	.widget {
+		margin-bottom: 30px;
 	}
 }
 
@@ -41,7 +46,6 @@
 	.sidebar-newsletter {
 
 		input[type="email"] {
-			// margin: 0;
 
 			@include placeholder {
 				font-size: 0.875rem;
@@ -50,6 +54,9 @@
 		}
 
 		[type="submit"] {
+			max-width: 100%;
+			padding: 10px 25px;
+
 			@extend %button-border-black;
 			@extend %button-border-hover;
 		}
@@ -112,6 +119,18 @@
 					background-color: $primary-color;
 					color: $white;
 				}
+			}
+		}
+
+		.fa-ask-sidebar {
+			background-image: url(images/social/spritesheet-2.png);
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			display: block;
+			height: 100%;
+
+			&:hover {
+				background-position: -35px 0;
 			}
 		}
 	}

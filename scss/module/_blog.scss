@@ -115,6 +115,10 @@
 	}
 }
 
+.wp-caption {
+	max-width: 100%;
+}
+
 .wp-caption-text {
 	color: $steel;
 	font-weight: 300;
@@ -124,6 +128,13 @@
 }
 
 .post .button--apply {
+	margin-top: 25px;
+	display: inline-block;
 	@extend %button-blue;
 	@extend %tomato-hover;
+
+	&.not-allow {
+		background-color: $jet;
+		cursor: not-allowed;
+	}
 }

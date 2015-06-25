@@ -20,8 +20,10 @@
 	.news-content {
 		background-color: $snow;
 		border: 1px solid $gainsboro;
+		min-height: 282px;
 		padding: 1.25em;
 		position: relative;
+		overflow: hidden;
 
 		&:after {
 			content: '';
@@ -83,7 +85,7 @@
 		line-height: 0.9em;
 		font-size: 2.25rem;
 		color: $steel;
-		font-weight: 300;
+		// font-weight: 300;
 		margin: 0 0 0.56em;
 	}
 
