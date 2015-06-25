@@ -31,7 +31,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
         foreach ( $socials as $social ) :
         ?>
         <li>
-          <a href="<?php echo esc_url( $social['href'] ); ?>">
+          <a href="<?php echo esc_url( $social['href'] ); ?>" target="_blank">
               <?php 
               switch ( strtolower( $social['name'] ) ) {
                 case 'facebook':
