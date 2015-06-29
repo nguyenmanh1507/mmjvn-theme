@@ -112,9 +112,9 @@
 
           <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-          <?php $google_map = urlencode_deep(get_field( 'cu_hn_location' )['address']); ?>
+          <?php $google_map = get_field( 'cu_hn_location' )['address']; ?>
           <div id="map-canvas">
-            <a href="https://www.google.com/maps/dir//<?php echo $google_map; ?>/" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<?php echo $google_map; ?>&amp;zoom=18&amp;scale=false&amp;size=600x300&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=size:mid%7Ccolor:red%7Clabel:1%7C<?php echo $google_map; ?>" alt="<?php echo $google_map; ?>"></a>
+            <a href="https://www.google.com/maps/dir//<?php echo urlencode_deep($google_map); ?>/" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<?php echo urlencode_deep($google_map); ?>&amp;zoom=18&amp;scale=false&amp;size=600x300&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=size:mid%7Ccolor:red%7Clabel:1%7C<?php echo urlencode_deep($google_map); ?>" alt="<?php echo $google_map; ?>"></a>
           </div>
           <?php endwhile; endif; ?>
           <?php wp_reset_postdata(); ?>

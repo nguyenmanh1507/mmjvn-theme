@@ -89,13 +89,13 @@ get_header(); ?>
               
               <div class="small-12 medium-6 columns">
                 <?php
-                $kyoto_map = urlencode_deep(get_field( 'cu_kyoto_location' )['address']); 
+                $kyoto_map = get_field( 'cu_kyoto_location' )['address']; 
                 ?>
 
                 <div class="branch-map">
                   <div id="branch-map-2">
-                    <a href="https://www.google.com/maps/place/<?php echo $kyoto_map; ?>/" target="_blank">
-                      <img src="http://maps.googleapis.com/maps/api/staticmap?center=<?php echo $kyoto_map; ?>&amp;zoom=18&amp;scale=1&amp;size=600x300&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=size:mid%7Ccolor:red%7Clabel:1%7C<?php echo $kyoto_map; ?>" alt="<?php echo $kyoto_map; ?>">
+                    <a href="https://www.google.com/maps/place/<?php echo urlencode_deep($kyoto_map); ?>/" target="_blank">
+                      <img src="http://maps.googleapis.com/maps/api/staticmap?center=<?php echo urlencode_deep($kyoto_map); ?>&amp;zoom=18&amp;scale=1&amp;size=600x300&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=size:mid%7Ccolor:red%7Clabel:1%7C<?php echo urlencode_deep($kyoto_map); ?>" alt="<?php echo $kyoto_map; ?>">
                     </a>
                   </div>
                 </div>
@@ -123,13 +123,13 @@ get_header(); ?>
               
               <div class="small-12 medium-6 columns">
                 <?php
-                $tokyo_map = urlencode_deep(get_field( 'cu_tokyo_location' )['address']); 
+                $tokyo_map = get_field( 'cu_tokyo_location' )['address']; 
                 ?>
 
                 <div class="branch-map">
                   <div id="branch-map-3">
-                    <a href="https://www.google.com/maps/place/<?php echo $tokyo_map; ?>/" target="_blank">
-                      <img src="http://maps.googleapis.com/maps/api/staticmap?center=<?php echo $tokyo_map; ?>&amp;zoom=18&amp;scale=1&amp;size=600x300&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=size:mid%7Ccolor:red%7Clabel:2%7C<?php echo $tokyo_map; ?>" alt="<?php echo $tokyo_map; ?>">
+                    <a href="https://www.google.com/maps/place/<?php echo urlencode_deep($tokyo_map); ?>/" target="_blank">
+                      <img src="http://maps.googleapis.com/maps/api/staticmap?center=<?php echo urlencode_deep($tokyo_map); ?>&amp;zoom=18&amp;scale=1&amp;size=600x300&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=size:mid%7Ccolor:red%7Clabel:2%7C<?php echo urlencode_deep($tokyo_map); ?>" alt="<?php echo $tokyo_map; ?>">
                     </a>
                   </div>
                 </div>

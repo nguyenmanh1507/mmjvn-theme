@@ -25,7 +25,7 @@
 
 		<?php else : ?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'mmjvn-theme' ); ?></p>
+			<p><?php esc_html_e( 'Không có bài viết nào trong mục này, có thể tìm kiếm sẽ giúp bạn', 'mmjvn-theme' ); ?></p>
 
 		<?php endif; ?>
 	</div><!-- .page-content -->
