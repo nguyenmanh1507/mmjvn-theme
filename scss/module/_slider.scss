@@ -139,6 +139,7 @@
 		@media only screen and (min-width: 85.3125rem) {
 			text-align: center;
 			width: 100% !important;	
+			margin-top: -4px;
 		}
 
 		li {
@@ -148,7 +149,7 @@
 
 			&.flex-active-slide {
 				border-bottom: 5px solid $primary-color;
-				box-shadow: 1px 2px 4px rgba($black, .4);
+				// box-shadow: 1px 2px 4px rgba($black, .4);
 				position: relative;
 				z-index: 10;
 

@@ -1,5 +1,12 @@
-#related-post-slider .item {
-	padding: 0 5% 0 0;
+#related-post-slider {
+
+	.owl-wrapper-outer {
+		float: left;
+	}
+	
+	.item {
+		padding: 0 5% 0 0;
+	}
 }
 
 .related-post {

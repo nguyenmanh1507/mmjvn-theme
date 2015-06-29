@@ -5622,6 +5622,7 @@ div.wpcf7-mail-sent-ok {
   #carousel .slides {
     text-align: center;
     width: 100% !important;
+    margin-top: -4px;
   }
 }
 
@@ -5634,7 +5635,6 @@ div.wpcf7-mail-sent-ok {
 
 #carousel .slides li.flex-active-slide {
   border-bottom: 5px solid #24b3cb;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
   position: relative;
   z-index: 10;
 }
@@ -5876,7 +5876,7 @@ div.wpcf7-mail-sent-ok {
   display: block;
   font-size: 1.875rem;
   font-weight: 300;
-  padding: 0 2.5em 1em;
+  padding: 0 2.5em 0.5em;
 }
 
 @media only screen and (max-width: 56.25rem) {
@@ -5930,7 +5930,7 @@ div.wpcf7-mail-sent-ok {
 .news .news-content {
   background-color: #F9F9F9;
   border: 1px solid #dfdfdf;
-  min-height: 282px;
+  min-height: 248px;
   padding: 1.25em;
   position: relative;
   overflow: hidden;
@@ -6598,6 +6598,10 @@ div.wpcf7-mail-sent-ok {
 .post .button--apply.not-allow {
   background-color: #9aa7af;
   cursor: not-allowed;
+}
+
+#related-post-slider .owl-wrapper-outer {
+  float: left;
 }
 
 #related-post-slider .item {

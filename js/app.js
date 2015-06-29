@@ -45,6 +45,7 @@ var app = (function(document, $) {
 			// Slider
 			$('#carousel').flexslider({
 		    animation: 'slide',
+		    animationLoop: false,
 		    controlNav: false,
 		    slideshowSpeed: 10000,
 		    itemWidth: 222,
@@ -56,6 +57,7 @@ var app = (function(document, $) {
 		 	// Carousel
 		  $('#slider').flexslider({
 		    animation: 'slide',
+		    animationLoop: true,
 		    nextText: '',
 		    prevText: '',
 		    slideshowSpeed: 10000,
