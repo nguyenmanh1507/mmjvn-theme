@@ -222,3 +222,21 @@ div.wpcf7-validation-errors {
 	border: none;
 	color: tomato;
 }
+
+div.wpcf7-mail-sent-ok {
+	background-color: $primary-color;
+	color: $white;
+	border: none;
+	padding: 10px;
+	text-align: center;
+}
+
+// Facebook style
+.fb_iframe_widget_fluid span {
+	background-color: white;
+	width: 100% !important;
+}
+
+.fb_iframe_widget iframe {
+	width: 100% !important;
+}

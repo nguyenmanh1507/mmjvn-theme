@@ -267,6 +267,14 @@
 	.top-bar-section li:not(.has-form) a:not(.button) {
 		padding: 0;
 	}
+
+	.top-bar-section .has-form {
+		padding: 0;
+	}
+
+	.top-bar-section ul li.has-form > a {
+		margin: 0;
+	}
 }
 
 // Dropdown style
@@ -298,5 +306,16 @@
 		&:last-child {
 			border-bottom: none;
 		}
+	}
+}
+
+@media only screen and (max-width: 29.875rem) {
+	.top-bar .name h1 a, 
+	.top-bar .name h2 a, 
+	.top-bar .name h3 a, 
+	.top-bar .name h4 a, 
+	.top-bar .name p a, 
+	.top-bar .name span a {
+		display: inline;
 	}
 }

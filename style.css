@@ -1,3 +1,24 @@
+/*
+Theme Name: mmjvn-theme
+Theme URI: http://mmj.vn/
+Author: MediaMaxJapan Viet Nam
+Author URI: http://mmj.vn
+Description: WordPress theme for mmj.vn website
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mmjvn-theme
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+mmjvn-theme is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -5147,6 +5168,23 @@ div.wpcf7-validation-errors {
   color: tomato;
 }
 
+div.wpcf7-mail-sent-ok {
+  background-color: #24b3cb;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px;
+  text-align: center;
+}
+
+.fb_iframe_widget_fluid span {
+  background-color: white;
+  width: 100% !important;
+}
+
+.fb_iframe_widget iframe {
+  width: 100% !important;
+}
+
 .top-header {
   padding: 10px 0 0;
 }
@@ -5393,6 +5431,12 @@ div.wpcf7-validation-errors {
   .top-bar-section li:not(.has-form) a:not(.button) {
     padding: 0;
   }
+  .top-bar-section .has-form {
+    padding: 0;
+  }
+  .top-bar-section ul li.has-form > a {
+    margin: 0;
+  }
 }
 
 @media only screen and (min-width: 1170px) {
@@ -5418,6 +5462,17 @@ div.wpcf7-validation-errors {
   }
   .top-bar-section .dropdown li:last-child {
     border-bottom: none;
+  }
+}
+
+@media only screen and (max-width: 29.875rem) {
+  .top-bar .name h1 a,
+  .top-bar .name h2 a,
+  .top-bar .name h3 a,
+  .top-bar .name h4 a,
+  .top-bar .name p a,
+  .top-bar .name span a {
+    display: inline;
   }
 }
 
@@ -7344,7 +7399,7 @@ div.wpcf7-validation-errors {
   background-color: tomato;
   text-align: center;
   border-radius: 0 0 5px 5px;
-  margin-top: -4px;
+  margin-top: -9px;
   color: white;
 }
 
