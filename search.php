@@ -29,19 +29,27 @@ get_header(); ?>
 
         <section class="main-content" role="main">
 
+          <?php global $wp_query; ?>
+          <?php $results = $wp_query->found_posts; ?>
+          <?php
+            if ( $results > 0 ) {
+              echo '<h3 class="result-number">' . $results . __( ' Kết quả được tìm thấy' ) . '</h3>';
+            }
+          ?>
+
+
 					<?php if ( have_posts() ) : ?>
           <?php the_archive_title( '<h2 class="show-for-sr">', '</h2>' ); ?>
-					
+
 					<?php while ( have_posts() ) : the_post(); ?>
 					
-					<?php get_template_part( 'template-parts/content', 'custom' ); ?>
+					  <?php get_template_part( 'template-parts/content', 'custom' ); ?>
 
         	<?php endwhile; else : ?>
 
-        		<?php get_template_part( 'template-parts/content', 'none' ); ?>
+        	  <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
         	<?php endif; ?>
-
 
           <!-- Paginate -->
           <?php get_template_part( 'template-parts/content', 'paginate' ); ?>

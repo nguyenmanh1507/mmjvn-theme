@@ -48,21 +48,27 @@
 	margin: 0 auto;
 
 	&.is-available {
-		border-color: $primary-color;
+		transition: all .3s ease-in;
 
-		.position__name {
-			color: $primary-color;
+		&:hover {
+			border-color: $primary-color;
+
+			.position__name {
+				color: $primary-color;
+			}
+
+			.button--black {
+				border-color: $primary-color;
+				color: $primary-color;
+			}
 		}
+
 
 		.position__status {
 			background-color: $primary-color;
 			box-shadow: 0 0 8px rgba($primary-color, .5);
 		}
 
-		.button--black {
-			border-color: $primary-color;
-			color: $primary-color;
-		}
 	}
 
 	.position__name {
@@ -72,6 +78,7 @@
 		line-height: 1em;
 		height: 68px;
 		margin-bottom: 10px;
+		transition: all .3s ease-in;
 	}
 
 	.position__status {

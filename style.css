@@ -4974,12 +4974,12 @@ a:hover {
   top: 0;
 }
 
-.top-bar-section ul li.has-form > a, .brief-info .button--brief-info, .recent-news-description a, .post .button--apply, .member figcaption .button {
+.top-bar-section ul li.has-form > a, .brief-info .button--brief-info, .recent-news-description a, .post .button--apply {
   -webkit-transition: background-color 0.3s;
           transition: background-color 0.3s;
 }
 
-.top-bar-section ul li.has-form > a:hover, .brief-info .button--brief-info:hover, .recent-news-description a:hover, .post .button--apply:hover, .member figcaption .button:hover {
+.top-bar-section ul li.has-form > a:hover, .brief-info .button--brief-info:hover, .recent-news-description a:hover, .post .button--apply:hover {
   background-color: tomato;
   color: #FFFFFF;
 }
@@ -6600,6 +6600,12 @@ div.wpcf7-mail-sent-ok {
   cursor: not-allowed;
 }
 
+.result-number {
+  line-height: 1em;
+  margin: 0 0 2.5rem;
+  color: #2f383d;
+}
+
 #related-post-slider .owl-wrapper-outer {
   float: left;
 }
@@ -6804,6 +6810,10 @@ div.wpcf7-mail-sent-ok {
   border-right-color: #24b3cb;
 }
 
+.timeline .timeline__item:hover figcaption .button {
+  background-color: #24b3cb;
+}
+
 .timeline .timeline__item:before {
   background-color: #cdd6da;
   border: 6px solid #FFFFFF;
@@ -6954,10 +6964,14 @@ div.wpcf7-mail-sent-ok {
 }
 
 .member figcaption .button {
+  background-color: #9aa7af;
+  color: #FFFFFF;
   font-size: 0.875rem;
   text-transform: uppercase;
   margin: 0;
   padding: 10px 20px;
+  -webkit-transition: all 0.3s ease-in;
+          transition: all 0.3s ease-in;
 }
 
 .member .member__name {
@@ -7044,21 +7058,26 @@ div.wpcf7-mail-sent-ok {
 }
 
 .position.is-available {
+  -webkit-transition: all 0.3s ease-in;
+          transition: all 0.3s ease-in;
+}
+
+.position.is-available:hover {
   border-color: #24b3cb;
 }
 
-.position.is-available .position__name {
+.position.is-available:hover .position__name {
+  color: #24b3cb;
+}
+
+.position.is-available:hover .button--black {
+  border-color: #24b3cb;
   color: #24b3cb;
 }
 
 .position.is-available .position__status {
   background-color: #24b3cb;
   box-shadow: 0 0 8px rgba(36, 179, 203, 0.5);
-}
-
-.position.is-available .button--black {
-  border-color: #24b3cb;
-  color: #24b3cb;
 }
 
 .position .position__name {
@@ -7068,6 +7087,8 @@ div.wpcf7-mail-sent-ok {
   line-height: 1em;
   height: 68px;
   margin-bottom: 10px;
+  -webkit-transition: all 0.3s ease-in;
+          transition: all 0.3s ease-in;
 }
 
 .position .position__status {
@@ -7473,6 +7494,29 @@ div.wpcf7-mail-sent-ok {
 .job-detail .job-detail__meta i.fa {
   margin-right: 10px;
   color: #24b3cb;
+}
+
+.job-detail .job-detail__content {
+  color: #2f383d;
+}
+
+.not-found-text span {
+  font-size: 6.25rem;
+  color: #24b3cb;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+.not-found-text p {
+  color: #2f383d;
+  font-size: 2.25rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.not-found-text a {
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=style.css.map */

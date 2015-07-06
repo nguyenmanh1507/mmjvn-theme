@@ -21,22 +21,24 @@ get_header(); ?>
   ================================================== -->
 
   <div class="polygon-bg polygon-bg--a padding-big">
-    
-    <div class="row">
-      <div class="small-12 medium-9 columns">
 
 				<section class="error-404 not-found">
-					<header class="page-header">
-						<h1 class="page-title"><?php esc_html_e( 'Oops! Trang này không tìm thấy.', 'mmjvn-theme' ); ?></h1>
-					</header><!-- .page-header -->
-				</section><!-- .error-404 -->
 
-      </div>
-      <div class="small-12 medium-3 columns">
-				<?php get_sidebar(); ?>
-      </div>
-    </div>
-    <!-- /.row -->
+          <div class="row">
+            <div class="medium-8 show-for-medium-up columns">
+              <img src="<?php echo get_template_directory_uri() . '/images/404.png' ?>" alt="Page not found">
+            </div>
+            <div class="medium-4 columns">
+              <div class="not-found-text">
+                <span>404</span>
+                <p><?php esc_html_e( 'Xin lỗi, không tìm thấy trang bạn đang tìm kiếm.' ); ?></p>
+                <a href="<?php echo esc_url( home_url('/') ); ?>"><?php esc_html_e( 'Quay lại trang chủ' ); ?></a>
+              </div>
+            </div>
+          </div>
+          <!-- /.row -->
+        </section><!-- .error-404 -->
+
 
   </div>
   <!-- /.polygon-bg -->

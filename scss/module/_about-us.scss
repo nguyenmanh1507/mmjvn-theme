@@ -94,6 +94,10 @@
 					border-right-color: $primary-color;
 				}
 			}
+
+			figcaption .button {
+				background-color: $primary-color;
+			}
 		}
 
 		&:before {
@@ -249,12 +253,13 @@
 		margin-left: 168px;
 
 		.button {
+			background-color: $jet;
+			color: $white;
 			font-size: 0.875rem;
 			text-transform: uppercase;
 			margin: 0;
 			padding: 10px 20px;
-
-			@extend %tomato-hover;
+			transition: all .3s ease-in;
 		}
 	}
 
